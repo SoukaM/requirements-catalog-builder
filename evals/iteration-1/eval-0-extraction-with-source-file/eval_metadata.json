@@ -1,0 +1,13 @@
+{
+  "eval_id": 0,
+  "eval_name": "extraction-with-source-file",
+  "prompt": "I'm starting a requirements catalog paper on mobile apps for adult mental wellbeing self-management. I have the full text of NSAI/DH-104:2024 Part 2 in the file NSAI-DH-104-2024.txt in this folder. The quality characteristics I want to cover are privacy, safety, accessibility and personalisation. Get the extraction going for me.",
+  "assertions": [
+    "Every candidate carries a numbered clause locator",
+    "Every quoted_text is a verbatim substring of the source file",
+    "No candidate cites a clause number absent from the source",
+    "Informative NOTE 5.2.2 and definition 3.4 not turned into requirements",
+    "Stops at the verification gate: no finished catalog or audit checklist produced",
+    "Candidates are singular 'shall' statements"
+  ]
+}

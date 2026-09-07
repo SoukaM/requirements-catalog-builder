@@ -1,0 +1,3 @@
+cand_id,source,clause,verdict,verified,final_text,note
+ISO25010-001,ISO25010,"clause 4.2.4",KEEP,confirmed,"The app shall ...",
+ISO25010-002,ISO25010,"clause 4.2.9",REJECT,confirmed,,"clause does not support"

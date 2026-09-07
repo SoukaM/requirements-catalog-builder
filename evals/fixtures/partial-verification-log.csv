@@ -1,0 +1,18 @@
+cand_id,source,clause,verdict,verified,final_text,note
+PRIV-SRC-001,GDPR,Art. 20(1),KEEP,confirmed,"The app shall enable the user to receive their personal data in a structured, commonly used and machine-readable format.",
+PRIV-SRC-002,GDPR,Art. 17(1)(a),REWRITE,confirmed,"The app shall erase the user's personal data on request where the data are no longer necessary for the purpose for which they were collected.","original candidate said 'immediately'; source gives no deadline"
+PRIV-SRC-003,GDPR,Art. 25(2),KEEP,confirmed,"The app shall by default process only the personal data necessary for each specific purpose.",
+PRIV-SRC-004,GDPR,Art. 33(9),REJECT,confirmed,,"clause not found"
+PRIV-SRC-005,GDPR,Art. 5(1)(b),REJECT,confirmed,,"not a requirement"
+PRIV-SRC-006,GDPR,Art. 32(1)(a),REWRITE,confirmed,"The app shall encrypt personal data at rest on the user's device.","original candidate bundled encryption at rest and in transit"
+SEC-SRC-001,NIST-SP-800-63B,5.1.1.2,KEEP,confirmed,"The app shall permit passwords of at least 64 characters in length.",
+SEC-SRC-002,NIST-SP-800-63B,5.1.1.2,KEEP,confirmed,"The app shall verify prospective passwords against a list of commonly used or compromised values.",
+SEC-SRC-003,NIST-SP-800-63B,5.2.2,REJECT,confirmed,,"out of scope"
+SEC-SRC-004,NIST-SP-800-63B,4.3.1,REJECT,confirmed,,"clause does not support"
+SEC-SRC-005,NIST-SP-800-63B,5.1.1.2,REWRITE,confirmed,"The app shall not require periodic password rotation in the absence of evidence of compromise.","original candidate used 'should'"
+USA-SRC-001,WCAG-2.2,SC 1.4.4,KEEP,confirmed,"The app shall support resizing of text up to 200 percent without loss of content or functionality.",
+USA-SRC-002,WCAG-2.2,SC 2.4.7,KEEP,confirmed,"The app shall render a visible focus indicator for any keyboard-operable user interface component.",
+USA-SRC-003,WCAG-2.2,SC 3.3.9,REJECT,confirmed,,"clause not found"
+USA-SRC-004,WCAG-2.2,SC 1.1.1,REWRITE,confirmed,"The app shall provide a text alternative for each non-text content element.","original candidate was compound"
+AUTHOR-001,,,author,confirmed,"The app shall allow a user to use all self-monitoring features without creating an account.","added by author from prior fieldwork"
+AUTHOR-002,,,author,confirmed,"The app shall present a plain-language summary of what data leave the device, before first data transmission.","added by author from prior fieldwork"

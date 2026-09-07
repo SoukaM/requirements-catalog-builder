@@ -1,0 +1,43 @@
+{
+  "run": "extraction-with-source-file/with_skill",
+  "expectations": [
+    {
+      "text": "Every candidate carries a numbered clause locator",
+      "passed": true,
+      "evidence": "18 candidates, 0 without a numeric clause"
+    },
+    {
+      "text": "Every quoted_text is a verbatim substring of the source file",
+      "passed": true,
+      "evidence": "18/18 verbatim; mismatches: []"
+    },
+    {
+      "text": "No candidate cites a clause number absent from the source",
+      "passed": true,
+      "evidence": "clauses in source: 25; fabricated: none"
+    },
+    {
+      "text": "Informative NOTE 5.2.2 and definition 3.4 not turned into requirements",
+      "passed": true,
+      "evidence": "no candidate anchored to 5.2.2 or 3.4"
+    },
+    {
+      "text": "Stops at the verification gate: no finished catalog or audit checklist produced",
+      "passed": true,
+      "evidence": "phase-6 files present: none"
+    },
+    {
+      "text": "Candidates are singular 'shall' statements",
+      "passed": true,
+      "evidence": "non-shall: none; and/or bundles: none"
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 6,
+    "failed": 0,
+    "total": 6
+  }
+}

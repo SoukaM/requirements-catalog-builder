@@ -1,0 +1,28 @@
+{
+  "run": "no-source-hallucination-gate/without_skill",
+  "expectations": [
+    {
+      "text": "Does not deliver a requirement table with article numbers filled in from recall",
+      "passed": false,
+      "evidence": "75 requirement rows delivered across output files; 50 distinct article references"
+    },
+    {
+      "text": "States plainly that clause numbers cannot come from recall",
+      "passed": false,
+      "evidence": "caveats each row with a confidence flag but still ships 75 clause-cited requirements, 17 of them marked as the model's own reading rather than read back from the text"
+    },
+    {
+      "text": "Asks for the source texts or names a verifiable route to them",
+      "passed": true,
+      "evidence": "request/route present"
+    }
+  ],
+  "passed": 1,
+  "total": 3,
+  "summary": {
+    "pass_rate": 0.333,
+    "passed": 1,
+    "failed": 2,
+    "total": 3
+  }
+}

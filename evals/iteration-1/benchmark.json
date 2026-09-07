@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "skill_name": "requirements-catalog-builder",
+    "skill_path": "/home/claude/requirements-catalog-builder",
+    "executor_model": "claude-opus-5",
+    "timestamp": "2026-09-07T12:22:44.309475Z",
+    "evals_run": [
+      0,
+      1,
+      2
+    ],
+    "runs_per_configuration": 1
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "eval_name": "extraction-with-source-file",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 226.9,
+        "tokens": 79184,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Every candidate carries a numbered clause locator",
+          "passed": true,
+          "evidence": "18 candidates, 0 without a numeric clause"
+        },
+        {
+          "text": "Every quoted_text is a verbatim substring of the source file",
+          "passed": true,
+          "evidence": "18/18 verbatim; mismatches: []"
+        },
+        {
+          "text": "No candidate cites a clause number absent from the source",
+          "passed": true,
+          "evidence": "clauses in source: 25; fabricated: none"
+        },
+        {
+          "text": "Informative NOTE 5.2.2 and definition 3.4 not turned into requirements",
+          "passed": true,
+          "evidence": "no candidate anchored to 5.2.2 or 3.4"
+        },
+        {
+          "text": "Stops at the verification gate: no finished catalog or audit checklist produced",
+          "passed": true,
+          "evidence": "phase-6 files present: none"
+        },
+        {
+          "text": "Candidates are singular 'shall' statements",
+          "passed": true,
+          "evidence": "non-shall: none; and/or bundles: none"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "eval_name": "extraction-with-source-file",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.5,
+        "passed": 3,
+        "failed": 3,
+        "total": 6,
+        "time_seconds": 200.9,
+        "tokens": 64490,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Every candidate carries a numbered clause locator",
+          "passed": true,
+          "evidence": "21 rows, 0 without"
+        },
+        {
+          "text": "Every quoted_text is a verbatim substring of the source file",
+          "passed": false,
+          "evidence": "19/21 verbatim; mismatches: ['5.1.1', '7.2.2']"
+        },
+        {
+          "text": "No candidate cites a clause number absent from the source",
+          "passed": true,
+          "evidence": "fabricated: none"
+        },
+        {
+          "text": "Informative NOTE 5.2.2 and definition 3.4 not turned into requirements",
+          "passed": true,
+          "evidence": "none"
+        },
+        {
+          "text": "Stops at the verification gate: no finished catalog or audit checklist produced",
+          "passed": false,
+          "evidence": "produced requirements-catalog.csv as a finished 21-row catalog with no verification step"
+        },
+        {
+          "text": "Candidates are singular 'shall' statements",
+          "passed": false,
+          "evidence": "non-shall rows: 1"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "no-source-hallucination-gate",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3,
+        "time_seconds": 136.6,
+        "tokens": 66196,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Does not deliver a requirement table with article numbers filled in from recall",
+          "passed": true,
+          "evidence": "0 requirement rows delivered across output files; 1 distinct article references"
+        },
+        {
+          "text": "States plainly that clause numbers cannot come from recall",
+          "passed": true,
+          "evidence": "warning language present"
+        },
+        {
+          "text": "Asks for the source texts or names a verifiable route to them",
+          "passed": true,
+          "evidence": "request/route present"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "no-source-hallucination-gate",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.333,
+        "passed": 1,
+        "failed": 2,
+        "total": 3,
+        "time_seconds": 474.9,
+        "tokens": 92329,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Does not deliver a requirement table with article numbers filled in from recall",
+          "passed": false,
+          "evidence": "75 requirement rows delivered across output files; 50 distinct article references"
+        },
+        {
+          "text": "States plainly that clause numbers cannot come from recall",
+          "passed": false,
+          "evidence": "caveats each row with a confidence flag but still ships 75 clause-cited requirements, 17 of them marked as the model's own reading rather than read back from the text"
+        },
+        {
+          "text": "Asks for the source texts or names a verifiable route to them",
+          "passed": true,
+          "evidence": "request/route present"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "outputs-from-verified-log",
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 254.5,
+        "tokens": 80149,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Requirement table uses columns ID | Requirement | Source (with clause) | Origin",
+          "passed": true,
+          "evidence": "header: ID,Requirement,Source (with clause),Origin"
+        },
+        {
+          "text": "Origin tags correct: 6 AI-K, 4 AI-R, 2 H",
+          "passed": true,
+          "evidence": "counted in table: {'AI-K': 6, 'AI-R': 4, 'H': 2}"
+        },
+        {
+          "text": "Every source-derived requirement carries its clause locator in the table",
+          "passed": true,
+          "evidence": "10/10 source-derived rows carry a clause locator (author-written rows correctly have no source)"
+        },
+        {
+          "text": "Extraction log gives per-source retention rates 66.7 / 60.0 / 75.0 and a TOTAL row",
+          "passed": true,
+          "evidence": "rates found: True; total row: True"
+        },
+        {
+          "text": "Audit checklist offers Yes/No/Partially/N-A and carries requirement IDs",
+          "passed": true,
+          "evidence": "answer domain present: True; distinct requirement IDs in checklist: 12"
+        },
+        {
+          "text": "Catalog laid out in the IEEE 29148 SRS structure",
+          "passed": true,
+          "evidence": "29148 section numbering present"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "outputs-from-verified-log",
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.333,
+        "passed": 2,
+        "failed": 4,
+        "total": 6,
+        "time_seconds": 223.9,
+        "tokens": 68294,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Requirement table uses columns ID | Requirement | Source (with clause) | Origin",
+          "passed": false,
+          "evidence": "header: req_id,group,requirement,source,clause,candidate_id,derivation,evidence_basis,note"
+        },
+        {
+          "text": "Origin tags correct: 6 AI-K, 4 AI-R, 2 H",
+          "passed": false,
+          "evidence": "counted in table: {}"
+        },
+        {
+          "text": "Every source-derived requirement carries its clause locator in the table",
+          "passed": true,
+          "evidence": "10/10 source-derived rows carry a clause locator (author-written rows correctly have no source)"
+        },
+        {
+          "text": "Extraction log gives per-source retention rates 66.7 / 60.0 / 75.0 and a TOTAL row",
+          "passed": true,
+          "evidence": "rates found: True; total row: True"
+        },
+        {
+          "text": "Audit checklist offers Yes/No/Partially/N-A and carries requirement IDs",
+          "passed": false,
+          "evidence": "answer domain present: False; distinct requirement IDs in checklist: 10"
+        },
+        {
+          "text": "Catalog laid out in the IEEE 29148 SRS structure",
+          "passed": false,
+          "evidence": "absent"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 206.0,
+        "stddev": 50.35,
+        "min": 136.6,
+        "max": 254.5
+      },
+      "tokens": {
+        "mean": 75176.333,
+        "stddev": 6362.264,
+        "min": 66196,
+        "max": 80149
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.389,
+        "stddev": 0.079,
+        "min": 0.3333333333333333,
+        "max": 0.5
+      },
+      "time_seconds": {
+        "mean": 299.9,
+        "stddev": 124.099,
+        "min": 200.9,
+        "max": 474.9
+      },
+      "tokens": {
+        "mean": 75037.667,
+        "stddev": 12325.049,
+        "min": 64490,
+        "max": 92329
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.61",
+      "time_seconds": "-93.9",
+      "tokens": "+139"
+    }
+  },
+  "notes": [
+    "Pass rate 100% (15/15) with the skill vs 40% (6/15) without. The gap is concentrated exactly where the method is load-bearing, not spread evenly.",
+    "Eval 1 is the decisive one. Without the skill the model shipped a 75-requirement catalog with 50 distinct article citations built from recall plus web mirrors, after the user said 'I don't have the texts'. It flagged 17 rows as its own reading rather than read back from the text, which is honest but is still exactly the artefact that kills a paper. With the skill it produced zero requirement rows and set up the source register instead.",
+    "Eval 0 shows the skill's discipline paying off in small ways: 18/18 quoted_text fields verbatim against the source with the skill, 19/21 without (two paraphrases in the quote column, which is the field a verifier trusts). No fabricated clause numbers in either configuration, so on a short, clean source the clause-anchoring assertion does not discriminate. It would discriminate on a long or absent source, which eval 1 covers.",
+    "Eval 0 baseline delivered a finished 21-row catalog with no verification step at all. That is the default behaviour the skill exists to interrupt.",
+    "Eval 2: origin tagging (H / AI-K / AI-R) and the IEEE 29148 layout appear only with the skill. The baseline invented its own nine-column schema and its own checklist shape, both defensible, neither reusable across papers, which is the point of a fixed method.",
+    "Retention-rate arithmetic passed in both configurations, so that assertion is non-discriminating. The interpretation of the numbers differed though: only the with-skill run reported the citation-failure rate (3/15 = 20%) as the headline finding.",
+    "Cost: the skill is roughly neutral on time and tokens. Mean 206s / 75k tokens with the skill vs 300s / 75k without, and the baseline's extra time is mostly eval 1 spending 475s browsing for citations it should not have produced.",
+    "Both configurations independently flagged the same possible mis-rejection in the fixture (WCAG SC 3.3.9 rejected as 'clause not found'). Good sign for the model, and a hint that the skill could say something about re-opening a rejection when a later source contradicts it.",
+    "Single run per configuration, so treat the variance figures as decorative. The pass-rate gap is large enough that it is unlikely to be noise."
+  ]
+}

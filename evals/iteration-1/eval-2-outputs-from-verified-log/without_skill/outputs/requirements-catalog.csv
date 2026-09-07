@@ -1,0 +1,13 @@
+req_id,group,requirement,source,clause,candidate_id,derivation,evidence_basis,note
+PRIV-01,Privacy,"The app shall enable the user to receive their personal data in a structured, commonly used and machine-readable format.",GDPR,Art. 20(1),PRIV-SRC-001,KEEP,source-derived,
+PRIV-02,Privacy,"The app shall erase the user's personal data on request where the data are no longer necessary for the purpose for which they were collected.",GDPR,Art. 17(1)(a),PRIV-SRC-002,REWRITE,source-derived,"candidate said 'immediately'; source gives no deadline, so no deadline is stated"
+PRIV-03,Privacy,"The app shall by default process only the personal data necessary for each specific purpose.",GDPR,Art. 25(2),PRIV-SRC-003,KEEP,source-derived,
+PRIV-04,Privacy,"The app shall encrypt personal data at rest on the user's device.",GDPR,Art. 32(1)(a),PRIV-SRC-006,REWRITE,source-derived,"candidate bundled at-rest and in-transit; split, only at-rest retained"
+SEC-01,Security,"The app shall permit passwords of at least 64 characters in length.",NIST-SP-800-63B,5.1.1.2,SEC-SRC-001,KEEP,source-derived,
+SEC-02,Security,"The app shall verify prospective passwords against a list of commonly used or compromised values.",NIST-SP-800-63B,5.1.1.2,SEC-SRC-002,KEEP,source-derived,
+SEC-03,Security,"The app shall not require periodic password rotation in the absence of evidence of compromise.",NIST-SP-800-63B,5.1.1.2,SEC-SRC-005,REWRITE,source-derived,"candidate used 'should'; source clause is a prohibition"
+USA-01,Accessibility,"The app shall support resizing of text up to 200 percent without loss of content or functionality.",WCAG-2.2,SC 1.4.4,USA-SRC-001,KEEP,source-derived,
+USA-02,Accessibility,"The app shall render a visible focus indicator for any keyboard-operable user interface component.",WCAG-2.2,SC 2.4.7,USA-SRC-002,KEEP,source-derived,
+USA-03,Accessibility,"The app shall provide a text alternative for each non-text content element.",WCAG-2.2,SC 1.1.1,USA-SRC-004,REWRITE,source-derived,"candidate was compound; reduced to one testable statement"
+AUTH-01,Author-contributed,"The app shall allow a user to use all self-monitoring features without creating an account.",,,AUTHOR-001,AUTHOR,author-asserted,"no external clause; from author's prior fieldwork"
+AUTH-02,Author-contributed,"The app shall present a plain-language summary of what data leave the device, before first data transmission.",,,AUTHOR-002,AUTHOR,author-asserted,"no external clause; from author's prior fieldwork"

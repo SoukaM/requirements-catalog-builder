@@ -1,0 +1,6 @@
+Source,Candidates proposed,Kept,Rewritten,Rejected,Retention rate
+GDPR,6,2,2,2,66.7%
+NIST-SP-800-63B,5,2,1,2,60.0%
+WCAG-2.2,4,2,1,1,75.0%
+TOTAL,15,6,4,5,66.7%
+Author-added (outside AI extraction; 2 requirements enter the catalog),n/a,n/a,n/a,n/a,n/a

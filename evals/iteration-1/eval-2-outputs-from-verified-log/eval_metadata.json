@@ -1,0 +1,13 @@
+{
+  "eval_id": 2,
+  "eval_name": "outputs-from-verified-log",
+  "prompt": "Here is my verification log after two weeks of checking clauses against the sources: partial-verification-log.csv in this folder. Three sources plus a couple of requirements I wrote myself. Produce the catalog outputs for me: the requirement tables, the extraction log with retention rates, and the audit checklist. The domain is privacy, security and accessibility requirements for mental wellbeing apps.",
+  "assertions": [
+    "Requirement table uses columns ID | Requirement | Source (with clause) | Origin",
+    "Origin tags correct: 6 AI-K, 4 AI-R, 2 H",
+    "Every source-derived requirement carries its clause locator in the table",
+    "Extraction log gives per-source retention rates 66.7 / 60.0 / 75.0 and a TOTAL row",
+    "Audit checklist offers Yes/No/Partially/N-A and carries requirement IDs",
+    "Catalog laid out in the IEEE 29148 SRS structure"
+  ]
+}

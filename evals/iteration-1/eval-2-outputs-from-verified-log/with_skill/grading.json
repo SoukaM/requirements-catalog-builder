@@ -1,0 +1,43 @@
+{
+  "run": "outputs-from-verified-log/with_skill",
+  "expectations": [
+    {
+      "text": "Requirement table uses columns ID | Requirement | Source (with clause) | Origin",
+      "passed": true,
+      "evidence": "header: ID,Requirement,Source (with clause),Origin"
+    },
+    {
+      "text": "Origin tags correct: 6 AI-K, 4 AI-R, 2 H",
+      "passed": true,
+      "evidence": "counted in table: {'AI-K': 6, 'AI-R': 4, 'H': 2}"
+    },
+    {
+      "text": "Every source-derived requirement carries its clause locator in the table",
+      "passed": true,
+      "evidence": "10/10 source-derived rows carry a clause locator (author-written rows correctly have no source)"
+    },
+    {
+      "text": "Extraction log gives per-source retention rates 66.7 / 60.0 / 75.0 and a TOTAL row",
+      "passed": true,
+      "evidence": "rates found: True; total row: True"
+    },
+    {
+      "text": "Audit checklist offers Yes/No/Partially/N-A and carries requirement IDs",
+      "passed": true,
+      "evidence": "answer domain present: True; distinct requirement IDs in checklist: 12"
+    },
+    {
+      "text": "Catalog laid out in the IEEE 29148 SRS structure",
+      "passed": true,
+      "evidence": "29148 section numbering present"
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 6,
+    "failed": 0,
+    "total": 6
+  }
+}

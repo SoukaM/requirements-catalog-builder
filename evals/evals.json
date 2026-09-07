@@ -1,0 +1,51 @@
+{
+  "skill_name": "requirements-catalog-builder",
+  "evals": [
+    {
+      "id": 0,
+      "name": "extraction-with-source-file",
+      "prompt": "I'm starting a requirements catalog paper on mobile apps for adult mental wellbeing self-management. I have the full text of NSAI/DH-104:2024 Part 2 in the file NSAI-DH-104-2024.txt in this folder. The quality characteristics I want to cover are privacy, safety, accessibility and personalisation. Get the extraction going for me.",
+      "expected_output": "Scope confirmed, source registered, candidate requirements as shall statements each carrying an exact clause locator and a verbatim quote from the file, presented for human verification rather than silently accepted into a catalog. Should not invent clauses that are not in the file, should not mistake the NOTE at 5.2.2 or the definition at 3.4 for requirements.",
+      "files": [
+        "fixtures/NSAI-DH-104-2024.txt"
+      ],
+      "assertions": [
+        "Every candidate carries a numbered clause locator",
+        "Every quoted_text is a verbatim substring of the source file",
+        "No candidate cites a clause number absent from the source",
+        "Informative NOTE 5.2.2 and definition 3.4 not turned into requirements",
+        "Stops at the verification gate: no finished catalog or audit checklist produced",
+        "Candidates are singular 'shall' statements"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "no-source-hallucination-gate",
+      "prompt": "Pull the requirements out of GDPR and the EU AI Act for a catalog on teletherapy apps. I don't have the texts to hand but you know them well enough, just give me the requirement table with the article numbers filled in.",
+      "expected_output": "Declines to produce clause-cited requirements from model recall, explains that clause numbers produced from memory are the failure mode that kills a catalog paper, asks for the source texts or offers to work another way. Must NOT output a table of requirements with confident article numbers.",
+      "files": [],
+      "assertions": [
+        "Does not deliver a requirement table with article numbers filled in from recall",
+        "States plainly that clause numbers cannot come from recall",
+        "Asks for the source texts or names a verifiable route to them"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "outputs-from-verified-log",
+      "prompt": "Here is my verification log after two weeks of checking clauses against the sources: partial-verification-log.csv in this folder. Three sources plus a couple of requirements I wrote myself. Produce the catalog outputs for me: the requirement tables, the extraction log with retention rates, and the audit checklist. The domain is privacy, security and accessibility requirements for mental wellbeing apps.",
+      "expected_output": "Requirement tables with ID | Requirement | Source (with clause) | Origin, correct origin tags (author rows = H, KEEP = AI-K, REWRITE = AI-R), extraction log per source with correct arithmetic and retention rates plus a TOTAL row, and an audit checklist of yes/no/partially/N-A questions carrying requirement IDs.",
+      "files": [
+        "fixtures/partial-verification-log.csv"
+      ],
+      "assertions": [
+        "Requirement table uses columns ID | Requirement | Source (with clause) | Origin",
+        "Origin tags correct: 6 AI-K, 4 AI-R, 2 H",
+        "Every source-derived requirement carries its clause locator in the table",
+        "Extraction log gives per-source retention rates 66.7 / 60.0 / 75.0 and a TOTAL row",
+        "Audit checklist offers Yes/No/Partially/N-A and carries requirement IDs",
+        "Catalog laid out in the IEEE 29148 SRS structure"
+      ]
+    }
+  ]
+}

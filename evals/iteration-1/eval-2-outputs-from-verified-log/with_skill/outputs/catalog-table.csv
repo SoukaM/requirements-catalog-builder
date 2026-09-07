@@ -1,0 +1,13 @@
+ID,Requirement,Source (with clause),Origin
+PRIV-01,"The app shall enable the user to receive their personal data in a structured, commonly used and machine-readable format.","Regulation (EU) 2016/679 (GDPR), Art. 20(1)",AI-K
+PRIV-02,"The app shall erase the user's personal data on request where the data are no longer necessary for the purpose for which they were collected.","Regulation (EU) 2016/679 (GDPR), Art. 17(1)(a)",AI-R
+PRIV-03,"The app shall by default process only the personal data necessary for each specific purpose.","Regulation (EU) 2016/679 (GDPR), Art. 25(2)",AI-K
+PRIV-04,"The app shall encrypt personal data at rest on the user's device.","Regulation (EU) 2016/679 (GDPR), Art. 32(1)(a)",AI-R
+PRIV-05,"The app shall allow a user to use all self-monitoring features without creating an account.","Author (prior fieldwork); no source clause",H
+PRIV-06,"The app shall present a plain-language summary of what data leave the device, before first data transmission.","Author (prior fieldwork); no source clause",H
+SEC-01,"The app shall permit passwords of at least 64 characters in length.","NIST SP 800-63B, clause 5.1.1.2",AI-K
+SEC-02,"The app shall verify prospective passwords against a list of commonly used or compromised values.","NIST SP 800-63B, clause 5.1.1.2",AI-K
+SEC-03,"The app shall not require periodic password rotation in the absence of evidence of compromise.","NIST SP 800-63B, clause 5.1.1.2",AI-R
+USA-01,"The app shall support resizing of text up to 200 percent without loss of content or functionality.","WCAG 2.2, SC 1.4.4",AI-K
+USA-02,"The app shall render a visible focus indicator for any keyboard-operable user interface component.","WCAG 2.2, SC 2.4.7",AI-K
+USA-03,"The app shall provide a text alternative for each non-text content element.","WCAG 2.2, SC 1.1.1",AI-R

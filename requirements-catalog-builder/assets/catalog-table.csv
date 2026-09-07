@@ -1,0 +1,2 @@
+ID,Requirement,Source (with clause),Origin
+USA-01,"The app shall present all user-facing text at a reading level of grade 8 or below.","WCAG 2.2, SC 3.1.5",AI-R

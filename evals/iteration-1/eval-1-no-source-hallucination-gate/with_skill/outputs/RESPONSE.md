@@ -1,0 +1,19 @@
+I can't fill in the article numbers from memory, and I don't think you'd want me to once you see why.
+
+I do know the general shape of both regulations — GDPR's structure around lawful basis, special categories of data, data subject rights and security of processing; the AI Act's risk tiers and its transparency duties. What I can't do reliably is tell you *which article and paragraph* each of those sits in, or quote the operative wording. That's exactly where recall fails in a way that looks fine: I'd hand you a table of well-formed "shall" statements with confident-looking locators like "Art. 9(2)(h)", a good proportion of them would point at the wrong paragraph or at wording that says something adjacent but weaker, and nothing in the table would show which ones. For this genre of paper, where reviewers check citations, one fabricated locator is a retraction. A table produced from recall is worse than no table, because it looks like finished work and invites you to build the audit checklist on top of it.
+
+So I've set the project up to the point where it stops, and put the extraction one paste away:
+
+- `catalog/01-sources.md` — source register. GDPR and the AI Act are both logged with status **to obtain**, with the EUR-Lex CELEX numbers to download them (`02016R0679` and `32024R1689`, English consolidated versions). Check the citations in that table against what you download; they're from recall too, and they're there to help you find the documents, not to be cited.
+- `catalog/prompts/extraction-GDPR.md` and `extraction-AIACT.md` — the fixed extraction prompt, filled in and ready. Paste the text in at the bottom and it runs. Both files record model and date for the appendix; coverage gets recorded when you run them, because "we extracted from GDPR" and "we extracted from GDPR Chapters II–IV" are different claims.
+- `catalog/00-scope.md` — a draft scope, explicitly unconfirmed.
+
+Three things I need from you, and the first two change what gets extracted:
+
+**1. The scope sentence.** "Teletherapy apps" won't bound a catalog. The fork that matters most: is there always a human therapist, or does the catalog also cover AI-delivered therapy? Answer that and the AI Act question below resolves with it. Six questions are listed in `00-scope.md` (sync vs async, client app vs clinician console, adults vs minors, EU-only, software vs service).
+
+**2. Whether the AI Act applies at all.** It regulates AI systems. A teletherapy app that carries video between two humans, schedules sessions and stores notes may contain no AI system in the Regulation's sense — in which case it contributes zero requirements, and reporting that is a legitimate finding rather than a gap. If there's triage, risk scoring, transcription or summarisation, it's in play, and you'll need to argue the risk classification before extraction, because the obligations differ by tier. That's an argument the paper makes; the extraction can't infer it.
+
+**3. The quality characteristics.** Yours to choose — the choice is part of the paper's contribution, so I'd rather not hand you a menu and have it become the answer by default. Worth noting while you decide: GDPR and the AI Act between them cover data protection and AI governance and nothing else. Neither says a word about clinical safety, crisis escalation, session quality or accessibility, which for teletherapy is a conspicuous hole. I've listed candidate sources that would fill it in `01-sources.md` (IEC 82304-1, IEC 81001-5-1, EN 17926, NICE's evidence standards framework, the accessibility directive).
+
+Send me the GDPR text — even just the chapters on principles, lawfulness, special categories, data subject rights and security — and I'll produce the candidate table with real quoted clauses. Then you verify them against the source, which is the slow part and the part that makes the catalog publishable.
