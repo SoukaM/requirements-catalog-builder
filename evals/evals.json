@@ -46,6 +46,23 @@
         "Audit checklist offers Yes/No/Partially/N-A and carries requirement IDs",
         "Catalog laid out in the IEEE 29148 SRS structure"
       ]
+    },
+    {
+      "id": 3,
+      "name": "instrument-source-item-extraction",
+      "prompt": "I'm building a requirements catalog for mobile apps for self-management of anxiety and depression in adults, quality characteristics functional suitability / interaction capability / security and privacy / safety / AI, SIREN methodology. Extract candidate requirements from this new source: instrument-source-sample.pdf. Register it and save the candidates CSV.",
+      "expected_output": "The source is a 44-app systematic review built around a 37/38-item, six-block assessment questionnaire (Table 3), with almost no normative prose of its own (its Discussion/Conclusion carry only a couple of genuine 'should'/'required to' sentences). Registered with extraction type = instrument. Extraction goes to the questionnaire item table rather than stopping at the handful of Discussion/Conclusion sentences, so the candidates CSV has roughly 35-40 rows (one per in-scope item, clause = the item's own code, quoted_text = the item's own wording, prevalence percentages kept out of candidate_requirement and used only as rationale evidence), not a mere 2-5 rows pulled from the conclusion alone.",
+      "files": [
+        "fixtures/instrument-source-sample.pdf"
+      ],
+      "assertions": [
+        "Source registered with an explicit instrument/normative type distinction, tagged instrument",
+        "Candidates CSV has roughly 35-40 rows, not 2-5",
+        "clause field is the item's own identifier (e.g. an item code or 'Table 3, item N'), not a paraphrase",
+        "quoted_text is the item's own wording copied from the questionnaire, not summarised",
+        "No candidate_requirement contains a prevalence percentage or scoring statistic",
+        "Any genuine normative sentences from the Discussion/Conclusion are kept separate from the item-derived candidates, not blended into the same pass"
+      ]
     }
   ]
 }

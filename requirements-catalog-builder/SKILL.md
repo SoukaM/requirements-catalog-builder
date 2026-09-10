@@ -1,6 +1,6 @@
 ---
 name: requirements-catalog-builder
-description: Builds a publication-grade software requirements catalog for any domain. Extracts candidate "shall" statements from standards, laws and papers, forces a human verification pass on every clause citation, tags each requirement by origin (human / AI-kept / AI-rewritten), and organises the survivors into an IEEE 29148 SRS with requirement tables, an extraction log and an audit checklist. Use this skill whenever someone wants to build a requirements catalog, requirements set, requirements framework or compliance checklist from standards; whenever they mention SIREN, IEEE 29148, ISO 25010, an SRS, requirements elicitation or requirements engineering; whenever they are writing a "requirements for X apps" catalog paper; and whenever they ask to pull requirements out of a regulation, guideline or standard (GDPR, HIPAA, WHO guidance, ISO/IEC standards, clinical guidelines) even without the word "catalog". Also use it for an audit checklist or evaluation instrument derived from standards.
+description: Builds a publication-grade software requirements catalog for any domain. Extracts candidate "shall" statements from standards, laws, papers, validated questionnaires, evaluation frameworks and coding taxonomies; forces human verification of every clause/item citation; tags origin (human / AI-kept / AI-rewritten); organises survivors into an IEEE 29148 SRS with requirement tables, extraction log and audit checklist. Use for a requirements catalog, requirements set/framework or compliance checklist; for SIREN, IEEE 29148, ISO 25010, an SRS, requirements elicitation/engineering; for a "requirements for X apps" catalog paper; to pull requirements from a regulation, guideline or standard (GDPR, HIPAA, WHO, ISO/IEC, clinical guidelines) even without the word "catalog"; and whenever a source is or contains a validated questionnaire, assessment instrument, coding scheme, or item-based checklist, even buried inside a narrative paper. Also for an audit checklist or evaluation instrument derived from standards.
 ---
 
 # Requirements Catalog Builder
@@ -35,7 +35,14 @@ Write the result to `catalog/00-scope.md` and get explicit confirmation before e
 
 ## Phase 1: Source register
 
-Create `catalog/01-sources.md`: one row per source with a short code (`ISO25010`, `GDPR`, `NICE-CG113`), the full citation, the file path if available, and status (`full text available` / `to obtain`). Extraction runs per source and every candidate carries this code, so settle the codes now.
+Create `catalog/01-sources.md`: one row per source with a short code (`ISO25010`, `GDPR`, `NICE-CG113`), the full citation, the file path if available, status (`full text available` / `to obtain`), and **type** (`normative` / `instrument`). Extraction runs per source and every candidate carries this code, so settle the codes now.
+
+Type decides which extraction mode Phase 2 uses for that source, so get it right here rather than discovering it mid-extraction:
+
+- **`normative`**: standards, regulations, guidelines, and papers whose requirements live in prose — "shall", "should", "we recommend", "developers are required to". Most standards and laws are this type.
+- **`instrument`**: validated questionnaires, evaluation frameworks, coding taxonomies, and assessment checklists. Their requirements live in the item list itself, not in a sentence anywhere. A 38-item assessment questionnaire *is* 38 candidate requirements; the paper's two-sentence conclusion is not where the content is.
+
+The trap is that an empirical paper reporting an instrument still reads like a normative source: it has an introduction, a discussion, a conclusion, and those sections may contain a handful of genuine "should" sentences. Hunting only for those verbs on a paper like this will find a few real candidates and miss the instrument entirely, because the instrument's 30-plus items were never phrased as obligations, they were phrased as questions or codes for scoring a sample. Judge the type by where the requirements actually live, not by whether the source is a paper versus a standard: a systematic review built around a validated coding scheme or assessment questionnaire is an `instrument` source even though it is, formally, a paper.
 
 ## Phase 2: Candidate extraction
 
@@ -45,7 +52,7 @@ Extract from one source at a time, and only from sources whose text you actually
 
 **If it is not available**, do not extract from memory of the standard. Say plainly that you can recall the general shape of, say, GDPR Article 17 but cannot be trusted with its exact clause numbering or wording, and ask the user to supply the text or to extract that source by hand. Producing plausible-looking clause references from recall is the exact failure mode this skill exists to prevent, and it is worse than producing nothing, because it looks like work.
 
-Use the extraction prompt in `references/extraction-prompt.md` verbatim, so that the prompt can be reported in the paper appendix and the extraction is reproducible. Save the filled-in version (with the domain and source substituted) to `catalog/prompts/extraction-<SOURCE>.md`.
+Use the extraction prompt in `references/extraction-prompt.md` verbatim, so that the prompt can be reported in the paper appendix and the extraction is reproducible. It has two variants, normative and instrument; use the one matching the source's type from the Phase 1 register. Save the filled-in version (with the domain and source substituted) to `catalog/prompts/extraction-<SOURCE>.md`.
 
 Each candidate is a row in `catalog/02-candidates-<SOURCE>.csv` with these columns:
 
@@ -57,6 +64,19 @@ Each candidate is a row in `catalog/02-candidates-<SOURCE>.csv` with these colum
 - `category` maps to one of the user's quality characteristics or to a functional area.
 
 Extract generously here. It is cheap for the user to reject a candidate and expensive for them to notice a missing one, so err toward proposing.
+
+### Instrument sources
+
+For a source tagged `instrument` in the register, the mode above is the wrong one to run, and running it anyway is how a 44-app study with a 38-item questionnaire yields three candidates instead of forty. Do not hunt for normative verbs in the prose. Go straight to the item table, coding scheme, or criteria appendix — that is where the source's content actually is, and the prose around it (introduction, discussion, conclusion) is mostly discussion of *findings using* the instrument, not the instrument's own content.
+
+Convert every item to a "shall" statement. This is a format change, not an inference, so it does not need the same evidentiary hedging a normative source needs: the source already decided this item matters enough to measure across its whole sample, which is a stronger claim than one sentence of prose. "TF29: user authentication" becomes "The app shall provide user authentication." "Item 47, does the app support offline access to key features?" becomes "The app shall support offline access to key features." Work through the item list exhaustively rather than picking out the ones that feel most requirement-shaped; an item that seems minor to you may be exactly the one the user's quality characteristics need.
+
+- `clause` is the item identifier exactly as the source prints it: "item TF29", "Table 1, Tracking", "item 47". Not a paraphrase of what the item is about.
+- `quoted_text` is the item's own wording: the questionnaire item, the coding-scheme description, the checklist row. Copy it, do not summarise it.
+- Do not convert prevalence figures into requirements. "Present in 24% of apps" or "achieved by 9 of 44 apps" is a finding about the sample the source studied, not a requirement about software in general — it tells you how well the field currently does at meeting the item, not whether the item belongs in the catalog. The item is the requirement; the percentage, if you want to use it at all, belongs in the rationale as evidence that the item is a real discriminator between apps rather than something every app already does or nothing ever does.
+- Flag duplicates across instruments explicitly in the rationale. Instruments in the same domain overlap heavily — a mood-tracking item in one questionnaire is often the same requirement as a self-monitoring item in another — and the user needs to merge these before Phase 5 assigns IDs, or the catalog double-counts the same requirement under two sources. Do not silently drop the duplicate yourself; that is the user's call to make with both quotations in front of them.
+
+Use the instrument variant of the extraction prompt in `references/extraction-prompt.md` for these sources, the same way the normative variant is used for the rest.
 
 ## Phase 3: Human verification gate
 
@@ -135,6 +155,6 @@ These projects span sessions. On re-entry, read `catalog/00-scope.md` and `catal
 ## Reference files
 
 - `references/srs-structure.md`: the IEEE 29148 SRS section layout and how to map quality characteristics onto it. Read before phase 5.
-- `references/extraction-prompt.md`: the exact extraction prompt to use and to publish. Read before phase 2.
+- `references/extraction-prompt.md`: the exact extraction prompts to use and to publish, normative and instrument variants. Read before phase 2, and pick the variant that matches each source's type.
 - `references/validation-rules.md`: keep / rewrite / reject criteria and the IEEE 29148 requirement quality attributes. Read before phase 3, and use it when proposing rewrites.
 - `assets/catalog-table.csv` and `assets/extraction-log.csv`: header templates for the two output tables.
