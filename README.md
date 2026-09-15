@@ -39,6 +39,18 @@ If a source is not available as text, the skill refuses to extract from it and r
 
 The `H` / `AI-K` / `AI-R` split is reportable. It tells a reader how much of the catalog the model actually produced and how much of its wording survived contact with the sources, which is a claim catalog papers using AI assistance need to be able to make.
 
+## Compatibility
+
+This skill is written in the [Agent Skills](https://agentskills.io) format: a SKILL.md file with YAML frontmatter, plus progressively-loaded reference and asset files. That format is now an open, vendor-neutral standard, not exclusive to Claude. Tools with native support for loading a skill folder like this one include Cursor, GitHub Copilot, OpenAI Codex, Google Gemini CLI, JetBrains Junie, Goose, and others in the [Agent Skills client list](https://agentskills.io/home) — drop `requirements-catalog-builder/` into the tool's skills directory and it should discover and trigger on its own, the same way it does in Claude Code.
+
+### Manual use in other AI tools
+
+Plain chat interfaces without a skills system (a ChatGPT or Gemini web chat, a bare API call) have no folder-loading or auto-trigger mechanism. To use this skill there:
+
+1. Paste the contents of `SKILL.md` in as a system prompt or custom instructions.
+2. Upload or paste in the files under `references/` and `assets/` alongside it, since progressive disclosure (the model loading them itself, only when needed) won't happen automatically.
+3. Tell the model explicitly which phase to start from, since there's no auto-trigger on a description match.
+
 ## Install
 
 Download `requirements-catalog-builder.skill` from the [releases](../../releases) or clone this repo and copy the `requirements-catalog-builder/` directory into your skills directory:

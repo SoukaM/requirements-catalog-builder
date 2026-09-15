@@ -146,7 +146,7 @@ Turn `The app shall allow the user to export their data in a machine-readable fo
 
 ### Document formats
 
-Alongside the markdown and CSV, produce a Word version of the catalog when the user wants something to circulate or to drop into a journal template. Read the `docx` skill's SKILL.md before building it, and build it from the finished markdown rather than composing it separately, so the two cannot drift.
+Alongside the markdown and CSV, produce a Word version of the catalog when the user wants something to circulate or to drop into a journal template. Build it from the finished markdown rather than composing it separately, so the two cannot drift. If a `docx` skill is installed in this environment, read its SKILL.md before building the file. If not, produce the closest equivalent available (an .rtf, an HTML file that Word opens cleanly, or plain markdown with a note on how to convert it) and tell the user which fallback was used.
 
 ## Resuming a catalog in progress
 
