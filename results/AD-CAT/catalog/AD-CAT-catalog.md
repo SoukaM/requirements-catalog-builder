@@ -1,6 +1,6 @@
 # AD-CAT requirements catalog
 
-120 entries (115 requirements and 5 sub-requirements). Origin tags: H = written by the author, AI-K = proposed by the model and kept as is, AI-R = proposed by the model and then rewritten or merged by the author. (AI) = applies only to apps with AI features. (HR) = applies only when the AI system is high-risk under the EU AI Act.
+120 entries (115 requirements and 5 sub-requirements). Origin tags: H = written by the author, AI-K = proposed by the model and kept as is, AI-R = proposed by the model and then rewritten or merged by the author. (AI) = applies only to apps with AI features. (HR) = applies only when the AI system is high-risk under the EU AI Act. (M) = can only be checked by the manufacturer, because it depends on internal records such as the risk management file or the security logs.
 
 ## Table 5. Functional suitability requirements (FUN-)
 
@@ -40,7 +40,7 @@
 | FUN-31 | The app shall be actively maintained, and the date of its most recent update shall be visible to the user before download. | Rickard item 2 | AI-R |
 | FUN-32 | The app shall support upgrade from previous versions while maintaining data integrity. | IEC 82304-1 cl. 4.2 f) 1) | AI-K |
 | FUN-33 | The app shall support rollback to the previous version after an upgrade. | IEC 82304-1 cl. 4.2 f) 2) | AI-K |
-| FUN-34 | The app shall specify its interoperability requirements. | IEC 82304-1 cl. 4.5 a) | AI-K |
+| FUN-34 (M) | The app shall specify its interoperability requirements. | IEC 82304-1 cl. 4.5 a) | AI-K |
 | FUN-35 | The app shall function as expected under its expected load on its specified software and hardware platforms. | IEC 82304-1 cl. 4.5 e) | AI-K |
 | FUN-36 | The app shall carry a unique version identifier. | IEC 82304-1 cl. 7.1 | AI-K |
 
@@ -66,7 +66,7 @@
 | INT-14 | The app shall provide multi-language support and regional settings. | Moumou and Idri item TF33; IEC 82304-1 cl. 4.5 b) | AI-R |
 | INT-15 | The app shall tailor its content to the user group it addresses. | Wu Table 4, Tailoring | AI-K |
 | INT-16 | The app shall present its information in a truthful and unbiased manner. | Wu Table 4, Trustworthiness | AI-K |
-| INT-17 | The app shall have documented user interface requirements. | IEC 82304-1 cl. 4.2 b) | AI-K |
+| INT-17 (M) | The app shall have documented user interface requirements. | IEC 82304-1 cl. 4.2 b) | AI-K |
 | INT-18 | The app shall be supplied with accompanying documents including instructions for use. | IEC 82304-1 cl. 4.2 e) | AI-K |
 | INT-19 | The app shall make its product identification accessible to the user during use. | IEC 82304-1 cl. 7.1 | AI-K |
 | INT-20 | The app's instructions for use shall state its intended use. | IEC 82304-1 cl. 7.2.2.2 a) | AI-K |
@@ -94,7 +94,7 @@
 | SEC-13 | The app shall be distributed through a mechanism that ensures the integrity of the installation. | IEC 82304-1 cl. 4.2 f) 4) | AI-K |
 | SEC-14 | The app shall support irreversible deletion of user data on decommissioning. | IEC 82304-1 cl. 4.2 f) 5) | AI-K |
 | SEC-15 | The app shall meet the requirements of applicable data protection regulation for protected information. | IEC 82304-1 cl. 4.2 g) | AI-K |
-| SEC-16 | The app shall detect, log and time security compromises occurring during normal use. | IEC 82304-1 cl. 4.5 f) | AI-K |
+| SEC-16 (M) | The app shall detect, log and time security compromises occurring during normal use. | IEC 82304-1 cl. 4.5 f) | AI-K |
 | SEC-17 | The app shall protect its essential functions when its security has been compromised. | IEC 82304-1 cl. 4.5 g) | AI-K |
 | SEC-18 | The app shall allow an authenticated privileged user to retain and recover the product configuration. | IEC 82304-1 cl. 4.5 h) | AI-K |
 | SEC-19 | The app's instructions for use shall explain how to safely decommission the app and safeguard personal and health-related data. | IEC 82304-1 cl. 7.2.2.9 | AI-K |
@@ -121,9 +121,9 @@
 | SAF-12 | The app's instructions for use shall state known limitations and contraindications to its use. | IEC 82304-1 cl. 7.2.2.2 d) | AI-K |
 | [SAF-12-1] | The app shall state clearly that it is not a replacement for professional care. | Rickard item 6; Qu Results | AI-R |
 | SAF-13 | The app's instructions for use shall list all safety and security warnings related to its use. | IEC 82304-1 cl. 7.2.2.3 | AI-K |
-| SAF-14 | The app shall have its safety and security characteristics, identified hazards and estimated risks documented. | IEC 82304-1 cl. 4.1 b) | AI-K |
-| SAF-15 | The app shall implement risk control measures for risks assessed as unacceptable. | IEC 82304-1 cl. 4.1 c) | AI-K |
-| SAF-16 | The app shall implement at system level the risk control measures derived from its initial risk assessment. | IEC 82304-1 cl. 4.5 c) | AI-K |
+| SAF-14 (M) | The app shall have its safety and security characteristics, identified hazards and estimated risks documented. | IEC 82304-1 cl. 4.1 b) | AI-K |
+| SAF-15 (M) | The app shall implement risk control measures for risks assessed as unacceptable. | IEC 82304-1 cl. 4.1 c) | AI-K |
+| SAF-16 (M) | The app shall implement at system level the risk control measures derived from its initial risk assessment. | IEC 82304-1 cl. 4.5 c) | AI-K |
 | SAF-17 (HR) | The app shall state in its instructions for use the known or foreseeable circumstances of use or misuse that may lead to risks to health and safety. | AI Act Art. 13(3)(b)(iii) | AI-K |
 | SAF-18 (HR) | The app shall provide a means to interrupt its AI system's operation and bring it to a halt in a safe state. | AI Act Art. 14(4)(e) | AI-K |
 | SAF-19 (AI) | The app shall allow an operator to intervene in its AI system's functioning to prevent harm or hazard. | ISO/IEC 25059 cl. 3.2.4 | AI-K |

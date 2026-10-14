@@ -1,0 +1,165 @@
+Candidate ID,Source,Clause or item,Candidate requirement (as proposed by the model),Category,Decision,Final catalog ID,Decision note
+IEC82304-001,IEC82304,4.1 a),The app shall document its intended use including the intended user profile and the intended operational environment.,FUN,Rewritten,FUN-01,Reframed from a manufacturer process obligation to a product property.
+IEC82304-002,IEC82304,4.1 b),"The app shall have its safety and security characteristics, identified hazards and estimated risks documented.",SAF,Kept,SAF-14,Process requirement; not observable from the product alone.
+IEC82304-003,IEC82304,4.1 c),The app shall implement risk control measures for risks assessed as unacceptable.,SAF,Kept,SAF-15,Process requirement; not observable from the product alone.
+IEC82304-004,IEC82304,4.2 b),The app shall have documented user interface requirements.,INT,Kept,INT-17,
+IEC82304-005,IEC82304,4.2 c),The app shall be protected against unintended influence by other software sharing the same device resources.,SEC,Kept,SEC-11,
+IEC82304-006,IEC82304,4.2 d),The app shall authenticate the person using it before granting access to health data.,SEC,Merged,SEC-04-1,Merged with IDRI-SUB-029 (item TF29).
+IEC82304-007,IEC82304,4.2 d),The app shall protect the integrity and authenticity of stored health data.,SEC,Kept,SEC-09,
+IEC82304-008,IEC82304,4.2 d),The app shall provide protection against malicious intent.,SEC,Kept,SEC-10,
+IEC82304-009,IEC82304,4.2 e),The app shall be supplied with accompanying documents including instructions for use.,INT,Kept,INT-18,
+IEC82304-010,IEC82304,4.2 f) 1),The app shall support upgrade from previous versions while maintaining data integrity.,FUN,Kept,FUN-32,
+IEC82304-011,IEC82304,4.2 f) 2),The app shall support rollback to the previous version after an upgrade.,FUN,Kept,FUN-33,
+IEC82304-012,IEC82304,4.2 f) 3),The app shall support the delivery of timely security patches and updates.,SEC,Kept,SEC-12,The source gives no interval; 'timely' kept unquantified.
+IEC82304-013,IEC82304,4.2 f) 4),The app shall be distributed through a mechanism that ensures the integrity of the installation.,SEC,Kept,SEC-13,
+IEC82304-014,IEC82304,4.2 f) 5),The app shall support irreversible deletion of user data on decommissioning.,SEC,Kept,SEC-14,
+IEC82304-015,IEC82304,4.2 g),The app shall meet the requirements of applicable data protection regulation for protected information.,SEC,Kept,SEC-15,
+IEC82304-016,IEC82304,4.5 a),The app shall specify its interoperability requirements.,FUN,Kept,FUN-34,Conditioned on applicability in the source.
+IEC82304-017,IEC82304,4.5 b),The app shall provide localization and language support.,INT,Merged,INT-14,Merged with IDRI-SUB-033 (item TF33).
+IEC82304-018,IEC82304,4.5 c),The app shall implement at system level the risk control measures derived from its initial risk assessment.,SAF,Kept,SAF-16,Process requirement; not observable from the product alone.
+IEC82304-019,IEC82304,4.5 e),The app shall function as expected under its expected load on its specified software and hardware platforms.,FUN,Kept,FUN-35,
+IEC82304-020,IEC82304,4.5 f),"The app shall detect, log and time security compromises occurring during normal use.",SEC,Kept,SEC-16,
+IEC82304-021,IEC82304,4.5 g),The app shall protect its essential functions when its security has been compromised.,SEC,Kept,SEC-17,
+IEC82304-022,IEC82304,4.5 h),The app shall allow an authenticated privileged user to retain and recover the product configuration.,SEC,Kept,SEC-18,
+IEC82304-023,IEC82304,7.1,The app shall carry a unique version identifier.,FUN,Kept,FUN-36,
+IEC82304-024,IEC82304,7.1,The app shall make its product identification accessible to the user during use.,INT,Kept,INT-19,
+IEC82304-025,IEC82304,7.2.2.2 a),The app's instructions for use shall state its intended use.,INT,Kept,INT-20,
+IEC82304-026,IEC82304,7.2.2.2 d),The app's instructions for use shall state known limitations and contraindications to its use.,SAF,Kept,SAF-12,Parent of SAF-12.
+IEC82304-027,IEC82304,7.2.2.3,The app's instructions for use shall list all safety and security warnings related to its use.,SAF,Kept,SAF-13,
+IEC82304-028,IEC82304,7.2.2.8,"The app's instructions for use shall list its non-self-explanatory system, error and fault messages with their causes and required user actions.",INT,Kept,INT-21,
+IEC82304-029,IEC82304,7.2.2.9,The app's instructions for use shall explain how to safely decommission the app and safeguard personal and health-related data.,SEC,Kept,SEC-19,
+IEC82304-030,IEC82304,7.2.3.1 g),The app shall document the technical security options that can be configured within it.,SEC,Kept,SEC-20,
+IEC82304-031,IEC82304,7.2.3.1 h),"The app shall document its behaviour when a failure to maintain security is detected, including the impact on patient care and data.",SEC,Kept,SEC-21,
+AIACT-001,AIACT,Art. 12(1),An AI-enabled app classified as high-risk shall automatically record events (logs) over its lifetime.,AI,Kept,AI-07,Conditional on high-risk classification.
+AIACT-002,AIACT,Art. 13(1),An AI-enabled app classified as high-risk shall be designed so that its operation is sufficiently transparent.,AI,Kept,AI-08,Conditional on high-risk classification.
+AIACT-003,AIACT,Art. 13(3)(b)(ii),An AI-enabled app classified as high-risk shall declare the level of accuracy robustness and cybersecurity against which it was tested.,AI,Kept,AI-09,Conditional on high-risk classification.
+AIACT-004,AIACT,Art. 13(3)(b)(iii),An AI-enabled app classified as high-risk shall state the known or foreseeable circumstances of use or misuse that may lead to risks.,SAF,Kept,SAF-17,Conditional on high-risk classification.
+AIACT-005,AIACT,Art. 14(1),An AI-enabled app classified as high-risk shall provide human-machine interface tools enabling effective human oversight.,AI,Kept,AI-10,Conditional on high-risk classification.
+AIACT-006,AIACT,Art. 14(4)(d),An AI-enabled app classified as high-risk shall allow the oversight person to disregard override or reverse its output.,AI,Kept,AI-11,Conditional on high-risk classification.
+AIACT-007,AIACT,Art. 14(4)(e),An AI-enabled app classified as high-risk shall provide a means to interrupt its operation and halt in a safe state.,SAF,Kept,SAF-18,Conditional on high-risk classification.
+AIACT-008,AIACT,Art. 15(1),An AI-enabled app classified as high-risk shall perform consistently in accuracy robustness and cybersecurity.,AI,Kept,AI-12,Conditional on high-risk classification. Source says 'appropriate level' with no threshold.
+AIACT-009,AIACT,Art. 15(4),An AI-enabled app classified as high-risk shall be resilient to errors faults and inconsistencies.,AI,Kept,AI-13,Conditional on high-risk classification.
+AIACT-010,AIACT,Art. 15(4) 3rd subpara,An AI-enabled app that continues to learn shall mitigate biased outputs influencing future operations.,AI,Kept,AI-14,Conditional on high-risk classification.
+AIACT-011,AIACT,Art. 15(5),An AI-enabled app classified as high-risk shall be resilient against unauthorised third parties.,SEC,Kept,SEC-22,Conditional on high-risk classification.
+AIACT-012,AIACT,Art. 15(5) 3rd subpara,"An AI-enabled app shall include measures against data poisoning, model poisoning and adversarial inputs.",SEC,Kept,SEC-23,Conditional on high-risk classification. Source qualifies with 'where appropriate'.
+AIACT-013,AIACT,Art. 50(1),An app whose AI system interacts directly with the user shall inform the user they are interacting with an AI system.,AI,Kept,AI-01,Applies to all AI systems regardless of risk class.
+AIACT-014,AIACT,Art. 50(2),An app generating synthetic content shall mark that output in a machine-readable format.,AI,Kept,AI-02,Applies to all AI systems regardless of risk class.
+AIACT-015,AIACT,Art. 50(5),The app shall provide AI transparency information clearly no later than the first interaction.,INT,Kept,INT-22,Applies only where the app embeds AI features.
+AIACT-016,AIACT,Art. 50(5) 2nd sentence,The app's AI transparency information shall conform to applicable accessibility requirements.,INT,Kept,INT-23,Applies only where the app embeds AI features.
+ISO25010-23-001,ISO25010-23,3.4.4,The app shall prevent user operation errors.,INT,Kept,INT-04,
+ISO25010-23-002,ISO25010-23,3.4.5,The app shall present its functions and information in a manner that encourages continued interaction.,INT,Kept,INT-05,
+ISO25010-23-003,ISO25010-23,3.4.6,"The app shall be usable by people of various backgrounds, including different ages, cultures, languages and education levels.",INT,Kept,INT-06,
+ISO25010-23-004,ISO25010-23,3.4.7,"The app shall be usable by people with the widest range of capabilities, including those with disabilities.",INT,Kept,INT-07,Parent of INT-08.
+ISO25010-23-005,ISO25010-23,3.4.8,The app shall present information where needed to make its capabilities and use obvious without external resources.,INT,Kept,INT-08,Parent of INT-10.
+ISO25010-23-006,ISO25010-23,3.6.1,The app shall ensure that user data are accessible only to those authorized to access them.,SEC,Kept,SEC-01,
+ISO25010-23-007,ISO25010-23,3.6.2,The app shall protect its data from unauthorized modification or deletion.,SEC,Kept,SEC-02,
+ISO25010-23-008,ISO25010-23,3.6.4,The app shall enable actions to be traced uniquely to the entity that performed them.,SEC,Kept,SEC-03,
+ISO25010-23-009,ISO25010-23,3.6.5,The app shall verify that the identity of a subject or resource is the one claimed.,SEC,Kept,SEC-04,Parent of SEC-05.
+ISO25010-23-010,ISO25010-23,3.6.6,The app shall sustain its operations while under attack from a malicious actor.,SEC,Kept,SEC-05,
+ISO25010-23-011,ISO25010-23,3.9.1,The app shall constrain its operation to within safe parameters when it encounters an operational hazard.,SAF,Kept,SAF-01,
+ISO25010-23-012,ISO25010-23,3.9.2,The app shall identify courses of events or operations that can expose the user to unacceptable risk.,SAF,Kept,SAF-02,
+ISO25010-23-013,ISO25010-23,3.9.3,The app shall automatically revert to a safe operating condition in the event of a failure.,SAF,Kept,SAF-03,
+ISO25010-23-014,ISO25010-23,3.9.4,The app shall warn of unacceptable risks in sufficient time for a response that sustains safe operation.,SAF,Kept,SAF-04,
+ISO25010-23-015,ISO25010-23,3.9.5,The app shall maintain safety during and after integration with other components.,SAF,Kept,SAF-05,
+ISO25010-23-016,ISO25010-23,3.1.2,The app shall provide correct results with the needed degree of precision.,FUN,Merged,FUN-02,Merged with RICKARD22-008 which gives the testable form.
+ISO25010-23-017,ISO25010-23,3.4.1,,INT,Added by author,INT-01,Subcharacteristic missed in the first extraction. Check wording against the source.
+ISO25010-23-018,ISO25010-23,3.4.2,,INT,Added by author,INT-02,Subcharacteristic missed in the first extraction. Check wording against the source.
+ISO25010-23-019,ISO25010-23,3.4.3,,INT,Added by author,INT-03,Subcharacteristic missed in the first extraction. Check wording against the source.
+ISO25059-001,ISO25059,3.2.1,The app shall allow the user to intervene in the functioning of its AI system in a timely manner.,AI,Merged,AI-04,Merged with ISO25059-006 (cl. 5.2).
+ISO25059-002,ISO25059,3.2.2,The app's AI system shall use information acquired from data or previous actions in its future predictions.,AI,Rejected,,"Functional adaptability describes what a learning system is, not an obligation."
+ISO25059-003,ISO25059,3.2.4,The app shall allow an operator to intervene in its AI system's functioning to prevent harm or hazard.,SAF,Kept,SAF-19,Applies only where the app embeds AI features.
+ISO25059-004,ISO25059,3.2.5,The app's AI system shall maintain its level of functional correctness under varying circumstances.,AI,Kept,AI-05,
+ISO25059-005,ISO25059,3.1,The app shall communicate appropriate information about its AI system to relevant stakeholders.,AI,Kept,AI-06,
+ISO25059-006,ISO25059,5.2,The app shall permit a human or external agent to intervene in its AI system's functioning.,AI,Merged,AI-04,Merged into AI-04.
+ISO25059-007,ISO25059,6.2,The app's AI system shall support human control of technology as part of societal and ethical risk mitigation.,AI,Rejected,,"Clause 6.2 is an enumerating note, not a shall-statement. No obligation to anchor to."
+MOUMOU-IDRI26-001,MOUMOU-IDRI26,item CC1,The app shall provide guided cognitive behavioural therapy exercises.,FUN,Kept,FUN-03,Parent of FUN-04.
+MOUMOU-IDRI26-002,MOUMOU-IDRI26,item CC2,The app shall provide mindfulness or meditation sessions.,FUN,Merged,FUN-04,Merged with QU20-010.
+MOUMOU-IDRI26-003,MOUMOU-IDRI26,item CC3,The app shall provide acceptance and commitment therapy tools.,FUN,Kept,FUN-05,
+MOUMOU-IDRI26-004,MOUMOU-IDRI26,item CC4,The app shall provide relaxation techniques such as breathing or muscle relaxation exercises.,FUN,Kept,FUN-06,
+MOUMOU-IDRI26-005,MOUMOU-IDRI26,item CC5,The app shall provide psychoeducation about anxiety and depression.,FUN,Merged,FUN-07,Three-way merge with IDRI-SUB-025 and QU20-009.
+MOUMOU-IDRI26-006,MOUMOU-IDRI26,item CC6,The app shall explain the purpose and process of its therapeutic exercises.,INT,Kept,INT-08-1,Child of INT-09.
+MOUMOU-IDRI26-007,MOUMOU-IDRI26,item SMR7,The app shall provide mood tracking functionality.,FUN,Merged,FUN-10,Three-way merge with QU20-005 and WU21-005.
+MOUMOU-IDRI26-008,MOUMOU-IDRI26,item SMR8,The app shall prompt the user for regular emotional check-ins.,FUN,Kept,FUN-16,
+MOUMOU-IDRI26-009,MOUMOU-IDRI26,item SMR9,The app shall allow the user to set reminders for medication or self-care tasks.,FUN,Merged,FUN-17,Merged with WU21-010.
+MOUMOU-IDRI26-010,MOUMOU-IDRI26,item SMR10,The app shall allow the user to customize its notifications.,INT,Kept,INT-13,
+MOUMOU-IDRI26-011,MOUMOU-IDRI26,item SMR11,The app shall allow the user to record triggers or context alongside mood entries.,FUN,Kept,FUN-11,
+MOUMOU-IDRI26-012,MOUMOU-IDRI26,item SMR12,The app shall allow the user to view trends or summaries of their mental health data.,FUN,Kept,FUN-18,
+MOUMOU-IDRI26-013,MOUMOU-IDRI26,item TCS13,The app shall provide access to licensed professionals via chat or video.,FUN,Kept,FUN-22,
+MOUMOU-IDRI26-014,MOUMOU-IDRI26,item TCS14,The app shall provide guided therapy modules.,FUN,Kept,FUN-23,
+MOUMOU-IDRI26-015,MOUMOU-IDRI26,item TCS15,The app shall provide peer support forums or group chats.,FUN,Kept,FUN-24,
+MOUMOU-IDRI26-016,MOUMOU-IDRI26,item TCS16,The app shall provide community events or discussion groups.,FUN,Kept,FUN-25,
+MOUMOU-IDRI26-017,MOUMOU-IDRI26,item TCS17,The app shall provide access to crisis counselors or mental health professionals.,SAF,Kept,SAF-10,
+MOUMOU-IDRI26-018,MOUMOU-IDRI26,item TCS18,The app shall allow the user to receive encouragement or feedback from peers or moderators.,FUN,Kept,FUN-26,
+MOUMOU-IDRI26-019,MOUMOU-IDRI26,item TCS19,The app shall provide a chatbot for simulated therapeutic conversations.,AI,Kept,AI-03,"Capability requirement, not an obligation on every app. Consider marking optional."
+MOUMOU-IDRI26-020,MOUMOU-IDRI26,item CM20,The app shall integrate crisis hotline links or buttons.,SAF,Merged,SAF-06,Merged with WU21-027.
+MOUMOU-IDRI26-021,MOUMOU-IDRI26,item CM21,The app shall allow the user to activate an emergency text or call.,SAF,Kept,SAF-07,
+MOUMOU-IDRI26-022,MOUMOU-IDRI26,item CM22,The app shall allow the user to share their location in an emergency.,SAF,Rewritten,SAF-08,Consent qualifier added to resolve the tension with SEC-01 and SEC-07.
+MOUMOU-IDRI26-023,MOUMOU-IDRI26,item CM23,The app shall provide a personalized safety plan or coping strategy tool.,SAF,Merged,SAF-09,Merged with IDRI-SUB-024.
+MOUMOU-IDRI26-024,MOUMOU-IDRI26,item CM24,The app shall allow the user to create a personalized emergency action plan.,SAF,Merged,SAF-09,Merged into SAF-09.
+MOUMOU-IDRI26-025,MOUMOU-IDRI26,item EPC25,The app shall provide educational content on mental health topics.,FUN,Merged,FUN-07,Merged into FUN-08.
+MOUMOU-IDRI26-026,MOUMOU-IDRI26,item EPC26,The app shall personalize its content based on user activity or needs.,FUN,Merged,FUN-21,Three-way merge with RICKARD22-012 and WU21-004.
+MOUMOU-IDRI26-027,MOUMOU-IDRI26,item EPC27,The app shall provide goal-setting or value-reflection features.,FUN,Kept,FUN-20,
+MOUMOU-IDRI26-028,MOUMOU-IDRI26,item EPC28,The app shall allow the user to track progress and receive feedback.,FUN,Merged,FUN-19,Merged with QU20-006.
+MOUMOU-IDRI26-029,MOUMOU-IDRI26,item TF29,The app shall provide user authentication.,SEC,Merged,SEC-04-1,Merged with IEC82304-006.
+MOUMOU-IDRI26-030,MOUMOU-IDRI26,item TF30,The app shall present a privacy policy.,SEC,Merged,SEC-06,Merged with RICKARD22-002; Rickard's before-use condition retained.
+MOUMOU-IDRI26-031,MOUMOU-IDRI26,item TF31,The app shall use data encryption or secure storage.,SEC,Merged,SEC-07,Merged with RICKARD22-004.
+MOUMOU-IDRI26-032,MOUMOU-IDRI26,item TF32,The app shall support offline access to its key features.,FUN,Kept,FUN-27,
+MOUMOU-IDRI26-033,MOUMOU-IDRI26,item TF33,The app shall provide multi-language options or regional settings.,INT,Merged,INT-14,Merged with IEC82304-017.
+MOUMOU-IDRI26-034,MOUMOU-IDRI26,item TF34,The app shall support accessibility features such as adjustable font size and voice navigation.,INT,Kept,INT-07-1,Child of INT-07.
+MOUMOU-IDRI26-035,MOUMOU-IDRI26,item TF35,The app shall allow the user to export their data.,FUN,Merged,FUN-28,Merged with RICKARD22-013.
+MOUMOU-IDRI26-036,MOUMOU-IDRI26,item TF36,The app shall implement intuitive navigation patterns.,INT,Kept,INT-09,
+MOUMOU-IDRI26-037,MOUMOU-IDRI26,item TF37,"The app shall use a simple, informal and friendly tone.",INT,Kept,INT-12,
+RICKARD22-001,RICKARD22,Table 1 item 2,The app shall be maintained with regular updates.,FUN,Rewritten,FUN-31,"Original was unobservable. The 180-day figure is Rickard's rating threshold, not an obligation."
+RICKARD22-002,RICKARD22,Table 1 item 3,The app shall provide a transparent privacy policy that is clear and accessible before use.,SEC,Merged,SEC-06,Merged into SEC-07.
+RICKARD22-003,RICKARD22,Table 1 item 4,The app shall declare where user data is stored.,SEC,Kept,SEC-08,
+RICKARD22-004,RICKARD22,Table 1 item 5,"The app shall collect, use and transmit sensitive data securely.",SEC,Merged,SEC-07,Merged into SEC-08.
+RICKARD22-005,RICKARD22,Table 1 item 6,The app shall state that it is not a replacement for professional services.,SAF,Merged,SAF-12-1,Merged with QU20-014.
+RICKARD22-006,RICKARD22,Table 1 item 7,The app shall identify its developer or sponsoring organisation.,FUN,Merged,FUN-29,Merged with WU21-025.
+RICKARD22-007,RICKARD22,Table 1 item 8,The app shall reference published research supporting it.,FUN,Merged,FUN-30,Three-way merge with RICKARD22-009 and WU21-023.
+RICKARD22-008,RICKARD22,Table 1 item 9,The app shall perform the functions it claims to perform.,FUN,Merged,FUN-02,Merged into FUN-02.
+RICKARD22-009,RICKARD22,Table 1 item 10,The app shall provide evidence of specific benefit from credible sources.,FUN,Merged,FUN-30,Merged into FUN-31.
+RICKARD22-010,RICKARD22,Table 1 item 11,The app shall be easy to use without prior instruction.,INT,Kept,INT-10,
+RICKARD22-011,RICKARD22,Table 1 item 12,The app shall provide interactive or multimedia content rather than text alone.,INT,Kept,INT-11,Rewritten during extraction from a rating-scale question to an observable property.
+RICKARD22-012,RICKARD22,Table 1 item 13,The app shall allow the user to personalise its settings or adapt to the individual user.,INT,Merged,FUN-21,Merged into FUN-22.
+RICKARD22-013,RICKARD22,Table 1 item 14,The app shall allow the user to export or share their data with a third party.,FUN,Merged,FUN-28,Merged into FUN-29.
+WU21-001,WU21,Table 4 Reduction,The app shall reduce complex target behaviour into simple tasks.,INT,Rejected,,"PSD technique menu. A design heuristic, not an obligation."
+WU21-002,WU21,Table 4 Tunneling,The app shall guide the user through a predefined sequence of actions.,INT,Rejected,,PSD technique menu. One of several valid navigation strategies.
+WU21-003,WU21,Table 4 Tailoring,The app shall tailor its content to the user group.,INT,Kept,INT-15,Group-level; distinct from individual personalisation in FUN-22.
+WU21-004,WU21,Table 4 Personalization,The app shall personalise its content for the individual user.,INT,Merged,FUN-21,Merged into FUN-22.
+WU21-005,WU21,Table 4 Self-monitoring,The app shall allow the user to monitor their own performance or status.,FUN,Merged,FUN-10,Merged into FUN-11.
+WU21-006,WU21,Table 4 Simulation,The app shall show the user the link between cause and effect.,INT,Rejected,,PSD technique menu. Optional and rare in this domain.
+WU21-007,WU21,Table 4 Rehearsal,The app shall allow the user to rehearse the target behaviour.,INT,Rejected,,PSD technique menu. One delivery style among many.
+WU21-008,WU21,Table 4 Praise,The app shall praise the user for performing the target behaviour.,INT,Rejected,,Gamification technique. Covered by the existing gamification catalog; out of AD-CAT scope.
+WU21-009,WU21,Table 4 Rewards,The app shall reward the user for performing the target behaviour.,INT,Rejected,,Gamification technique. Out of AD-CAT scope.
+WU21-010,WU21,Table 4 Reminders,The app shall remind the user of the target behaviour.,INT,Merged,FUN-17,Merged into FUN-18.
+WU21-011,WU21,Table 4 Suggestion,The app shall offer the user suggestions for performing the target behaviour.,INT,Rejected,,PSD technique menu. Overlaps personalisation and tailoring without adding a distinct obligation.
+WU21-012,WU21,Table 4 Similarity,The app shall present itself in a way that resembles the user.,INT,Rejected,,"PSD technique menu. Not testable, and not expected of a clinical self-management app."
+WU21-013,WU21,Table 4 Liking,The app shall have a visually attractive appearance.,INT,Rejected,,Duplicate in force with INT-05 (user engagement) which is better grounded.
+WU21-014,WU21,Table 4 Social role,The app shall adopt a social role in its interaction with the user.,INT,Rejected,,PSD technique menu. In this domain it also raises the AI-disclosure issue covered by AI-01.
+WU21-015,WU21,Table 4 Social learning,The app shall allow the user to observe other users performing the target behaviour.,INT,Rejected,,PSD social support. Low prevalence. Peer support already covered by FUN-25 to FUN-27.
+WU21-016,WU21,Table 4 Social comparison,The app shall allow the user to compare their performance with other users.,INT,Rejected,,PSD social support. Social comparison is clinically contraindicated for depression (rumination risk).
+WU21-017,WU21,Table 4 Normative influence,The app shall bring together users with a shared goal.,INT,Rejected,,PSD social support. Covered by FUN-26.
+WU21-018,WU21,Table 4 Social facilitation,The app shall allow the user to see that other users are performing the target behaviour.,INT,Rejected,,PSD social support. Covered by FUN-25 and FUN-27.
+WU21-019,WU21,Table 4 Cooperation,The app shall allow users to cooperate towards the target behaviour.,INT,Rejected,,Used by 0% of apps in Wu's sample. Not an expectation in this domain.
+WU21-020,WU21,Table 4 Competition,The app shall allow users to compete towards the target behaviour.,INT,Rejected,,Used by 0% of apps in Wu's sample. Clinically questionable for this population.
+WU21-021,WU21,Table 4 Recognition,The app shall offer public recognition to users who perform the target behaviour.,INT,Rejected,,Used by 0% of apps in Wu's sample. Conflicts with stigma and privacy concerns in mental health apps.
+WU21-022,WU21,Table 4 Trustworthiness,The app shall present its information in a truthful and unbiased manner.,INT,Kept,INT-16,
+WU21-023,WU21,Table 4 Expertise,The app shall show evidence of knowledge and competence in its subject matter.,FUN,Merged,FUN-30,Merged into FUN-31.
+WU21-024,WU21,Table 4 Surface credibility,The app shall present a competent look and feel.,INT,Rejected,,Duplicate in force with INT-05. Not independently testable.
+WU21-025,WU21,Table 4 Real-world feel,The app shall identify the organisation or people behind it.,FUN,Merged,FUN-29,Merged into FUN-30.
+WU21-026,WU21,Results Safety and privacy,The app shall assess the user for suicidality.,SAF,Rewritten,SAF-11,Made conditional and bound to a response pathway. Clinical judgement point: raise with supervisor.
+WU21-027,WU21,Results Safety and privacy,The app shall provide the user with resources for suicidality.,SAF,Merged,SAF-06,Merged into SAF-06.
+QU20-001,QU20,Table 1 Screening / Monitoring symptoms,The app shall provide a screening function for monitoring depression symptoms during intervention.,FUN,Merged,FUN-13,Merged with QU20-007.
+QU20-002,QU20,Table 1 Screening / Self-diagnosis,The app shall provide a screening function for self-assessment of depression.,FUN,Rewritten,FUN-14,Validated-instrument qualifier added from the QU20 Discussion recommendation.
+QU20-003,QU20,Table 1 Screening / Basis for personalization,The app shall use its screening results as a basis for personalizing the intervention.,FUN,Kept,FUN-15,
+QU20-004,QU20,Table 1 Tracking thought patterns,The app shall support tracking of the user's thought patterns.,FUN,Kept,FUN-12,
+QU20-005,QU20,Table 1 Tracking mood patterns,The app shall support tracking of the user's mood patterns.,FUN,Merged,FUN-10,Merged into FUN-11.
+QU20-006,QU20,Table 1 Tracking behavior,The app shall support monitoring of the user's adherence to the intervention.,FUN,Merged,FUN-19,Merged into FUN-20.
+QU20-007,QU20,Table 1 Tracking depression symptoms,The app shall support tracking of the user's depression symptoms.,FUN,Merged,FUN-13,Merged into FUN-14.
+QU20-008,QU20,Table 1 Intervention / Thought diaries,The app shall provide a thought diary helping the user identify and challenge negative thinking patterns.,FUN,Kept,FUN-03-1,Child of FUN-03.
+QU20-009,QU20,Table 1 Intervention / Psychoeducation,The app shall provide psychoeducational content.,FUN,Merged,FUN-07,Merged into FUN-08.
+QU20-010,QU20,Table 1 Intervention / Mindfulness,The app shall provide a mindfulness intervention.,FUN,Merged,FUN-04,Merged into FUN-05.
+QU20-011,QU20,Table 1 Intervention / Behavioral techniques,The app shall provide behavioural techniques that guide the user to perform positive behaviours.,FUN,Kept,FUN-08,
+QU20-012,QU20,Table 1 Intervention / Mood expression,The app shall provide a means for the user to express their emotions.,FUN,Kept,FUN-09,
+QU20-013,QU20,Table 1 Intervention / Other,The app shall provide emotional regulation strategies.,FUN,Rejected,,"Residual catch-all code. Specific strategies already covered by FUN-05, FUN-07 and FUN-09."
+QU20-014,QU20,Results Ethical Considerations,The app shall provide a medical disclaimer accessible from its marketplace listing or website.,SAF,Merged,SAF-12-1,Merged into SAF-12.
