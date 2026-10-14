@@ -70,7 +70,12 @@ requirements-catalog-builder/
   references/validation-rules.md    keep / rewrite / reject criteria, IEEE 29148 requirement quality attributes
   assets/*.csv                      header templates for the output tables
 evals/                              test prompts, fixtures, assertions and iteration-1 results
+results/AD-CAT/                     data of the AD-CAT paper: catalog, extraction log, audit answers
 ```
+
+## Results: AD-CAT
+
+[`results/AD-CAT/`](results/AD-CAT/) holds the data of the AD-CAT paper, a catalog of 120 requirements for anxiety and depression apps built with this skill. It contains the full catalog, the extraction log for each source, and the audit checklist with the answers for the two apps we audited.
 
 ## Testing
 

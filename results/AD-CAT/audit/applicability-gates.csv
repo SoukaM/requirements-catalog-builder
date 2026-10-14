@@ -1,0 +1,4 @@
+Gate,Question,Wysa,MindDoc,Effect
+A1,"Does the app embed an AI system as defined in AI Act Art. 3(1) (for example a machine-learning or LLM chatbot, or AI-driven personalisation)? Rule-based logic does not count.",Yes,No,If No: Q27 to Q30 are N/A and the HR supplement is skipped.
+A2,"Is the AI system high-risk under AI Act Art. 6 (for example a safety component of, or itself, a medical device requiring third-party conformity assessment)?",No,No,If Yes: score the HR supplement. If No: skip it.
+A3,"Does the app assess suicidality, through a questionnaire item or by detecting risk language?",Yes,Yes,If No: Q25 is N/A.

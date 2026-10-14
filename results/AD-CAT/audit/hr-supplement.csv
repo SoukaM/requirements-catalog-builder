@@ -1,0 +1,12 @@
+ID,Question,Primary requirement,Verification mode,Wysa,MindDoc
+H01,Does the developer document that the AI system automatically records events (logs) over its lifetime?,AI-07 (HR),Documentation,Not scored (gate A2 = No),Not scored (gate A2 = No)
+H02,Is the AI's operation documented transparently enough for its outputs to be interpreted and used appropriately?,AI-08 (HR),Documentation,Not scored (gate A2 = No),Not scored (gate A2 = No)
+H03,"Do the instructions for use declare the levels of accuracy, robustness and cybersecurity against which the AI was tested and validated?",AI-09 (HR),Documentation,Not scored (gate A2 = No),Not scored (gate A2 = No)
+H04,Does the app provide interface tools that enable effective human oversight of the AI during use?,AI-10 (HR),In-app,Not scored (gate A2 = No),Not scored (gate A2 = No)
+H05,"Can the person exercising oversight disregard, override or reverse the AI's output?",AI-11 (HR),In-app,Not scored (gate A2 = No),Not scored (gate A2 = No)
+H06,"Does the developer document that accuracy, robustness and cybersecurity are maintained throughout the AI lifecycle?",AI-12 (HR),Documentation,Not scored (gate A2 = No),Not scored (gate A2 = No)
+H07,"Does the developer document measures that make the AI resilient to errors, faults and inconsistencies arising from interaction with users or other systems?",AI-13 (HR),Documentation,Not scored (gate A2 = No),Not scored (gate A2 = No)
+H08,"If the AI keeps learning after deployment, does the developer document how feedback-loop bias is mitigated? (N/A if it does not learn after deployment)",AI-14 (HR),Documentation,Not scored (gate A2 = No),Not scored (gate A2 = No)
+H09,Is there a means to interrupt the AI system and bring it to a halt in a safe state?,SAF-18,In-app,Not scored (gate A2 = No),Not scored (gate A2 = No)
+H10,"Does the developer document resilience against unauthorised third parties trying to alter the AI's use, outputs or performance?",SEC-22,Documentation,Not scored (gate A2 = No),Not scored (gate A2 = No)
+H11,"Does the developer document measures to prevent and detect data poisoning, model poisoning and adversarial input attacks?",SEC-23,Documentation,Not scored (gate A2 = No),Not scored (gate A2 = No)

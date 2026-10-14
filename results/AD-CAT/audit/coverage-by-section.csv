@@ -1,0 +1,7 @@
+Section,Items,App A (Wysa),App B (MindDoc)
+Functional suitability,8,50.0% (4/8),75.0% (6/8)
+Interaction capability,6,83.3% (5/6),83.3% (5/6)
+Security and privacy,6,83.3% (5/6),83.3% (5/6)
+Safety,6,83.3% (5/6),50.0% (3/6)
+AI,4,75.0% (3/4),N/A
+Overall,30,73.3% (22/30),73.1% (19/26)

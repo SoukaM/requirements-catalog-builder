@@ -1,0 +1,12 @@
+Source,Type,Candidates proposed,Kept,Rewritten,Merged,Rejected
+IEC 82304-1:2016,Normative,31,28,1,2,0
+Regulation (EU) 2024/1689 (AI Act),Normative,16,16,0,0,0
+ISO/IEC 25010:2023,Normative,16,15,0,1,0
+ISO/IEC 25059:2023,Normative,7,3,0,2,2
+ISO/IEC 25023:2016,Normative,0,0,0,0,0
+ISO/IEC 25040:2024,Normative,0,0,0,0,0
+Moumou and Idri (2026),Instrument,37,21,1,15,0
+Rickard et al. (2022),Instrument,13,3,1,9,0
+Wu et al. (2021),Instrument,27,2,1,6,18
+Qu et al. (2020),Instrument,14,5,1,7,1
+Total,,161,93,5,42,21
