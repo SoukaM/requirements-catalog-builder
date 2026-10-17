@@ -10,6 +10,7 @@ This folder holds the data behind the paper *A Requirements Catalog on Functiona
 | `catalog/` | `AD-CAT-catalog.md` | The same catalog as readable tables, one per characteristic | Tables 5 to 9 |
 | `extraction/` | `candidates-and-decisions.csv` | All 164 rows: the 161 candidates the model proposed, plus the 3 requirements the author added. For each one: source, clause or item, the proposed wording, the decision (kept, rewritten, merged, rejected or added) and the ID it became in the final catalog | Section 3.2.3 |
 | `extraction/` | `extraction-log.csv` | Candidates proposed, kept, rewritten, merged and rejected for each of the ten sources | Table 2 |
+| `extraction/` | `extraction-prompts.md` | The normative and instrument extraction prompts, in full, with the model, date and sections supplied for each source | Section 3.2.2, Appendix A |
 | `audit/` | `applicability-gates.csv` | The gates answered for each app before scoring | Section 5.1 |
 | `audit/` | `checklist-answers.csv` | The 30-item checklist: each question, the requirement it checks, the criteria for Yes, Partially and No, and our answer and evidence for each app | Table 13 |
 | `audit/` | `hr-supplement.csv` | The 11 extra items for high-risk AI systems. Neither app is high-risk, so they were not scored | Section 5.3 |
@@ -20,7 +21,7 @@ This folder holds the data behind the paper *A Requirements Catalog on Functiona
 ## How the data was produced
 
 - **Sources.** Ten sources were given to the skill: five standards (IEC 82304-1:2016, ISO/IEC 25010:2023, ISO/IEC 25059:2023, ISO/IEC 25023:2016 and ISO/IEC 25040:2024), the EU AI Act, and four instruments (Moumou and Idri 2026, Rickard et al. 2022, Wu et al. 2021, Qu et al. 2020). ISO/IEC 25023 and ISO/IEC 25040 produced no candidates.
-- **Extraction.** Claude Sonnet 5 proposed the candidate requirements and Claude Opus 5 organised the kept ones into the IEEE 29148 structure. The prompts are in `requirements-catalog-builder/references/extraction-prompt.md` and in Appendix A of the paper.
+- **Extraction.** Claude Sonnet 5 proposed the candidate requirements and Claude Opus 5 organised the kept ones into the IEEE 29148 structure. The prompts used for AD-CAT are in `extraction/extraction-prompts.md` (the generic versions are in `requirements-catalog-builder/references/extraction-prompt.md`); Appendix A of the paper lists the settings per source.
 - **Verification.** The first author checked every candidate against its source clause or item. No candidate cited a clause that does not exist, and none misquoted its clause.
 - **Origin tags.** `H` = written by the author (3), `AI-K` = proposed by the model and kept as is (93), `AI-R` = proposed by the model and then rewritten or merged (24).
 - **Audit.** One auditor answered the checklist on 16 September 2026, on a fresh install of Wysa 7.0.1 and MindDoc 4.18.32, using an iPhone 14 Pro (iOS 26) and a Huawei P30 Lite (Android). Coverage = Yes / (Yes + No + Partially). Weighted coverage counts Partially as half a Yes.
